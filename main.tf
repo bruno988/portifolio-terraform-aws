@@ -62,22 +62,14 @@ resource "aws_instance" "servidor_nginx" {
 
   user_data = <<-EOF
               #!/bin/bash
-              amazon-linux-extras install nginx1 -y
-              systemctl start nginx
-              systemctl enable nginx
+              # Instala o Docker no Amazon Linux 2
+              yum update -y
+              amazon-linux-extras install docker -y
+              systemctl start docker
+              systemctl enable docker
 
-              # Criando os arquivos no servidor buscando da pasta 'website'
-              cat <<EOT > /usr/share/nginx/html/index.html
-              ${file("website/index.html")}
-              EOT
-
-              cat <<EOT > /usr/share/nginx/html/style.css
-              ${file("website/style.css")}
-              EOT
-
-              cat <<EOT > /usr/share/nginx/html/script.js
-              ${file("website/script.js")}
-              EOT
+              # Roda o Nginx padrão (para teste rápido de Docker)
+              docker run -d -p 80:80 --name site-bruno nginx
               EOF
 
   tags = {
