@@ -20,7 +20,7 @@ jobs:
       - name: Build e Push da Imagem
         uses: docker/build-push-action@v4
         with:
-          context: ./website  # Mudamos para a pasta onde seu site está!
-          file: ./website/Dockerfile # Indicamos o caminho exato do arquivo
+          context: ./website           # <--- Aqui dizemos onde estão os arquivos do site
+          file: ./website/Dockerfile    # <--- Aqui dizemos onde está o "manual" (Dockerfile)
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/meu-site-devops:latest
