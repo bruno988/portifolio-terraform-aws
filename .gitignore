@@ -1,0 +1,7 @@
+# Arquivos de estado do Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Chaves e arquivos sensíveis
+minha-chave

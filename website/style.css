@@ -1,0 +1,39 @@
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    text-align: center;
+    background: #161b22;
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid #30363d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.rocket { font-size: 50px; margin-bottom: 10px; animation: float 3s ease-in-out infinite; }
+h1 { margin: 0; color: #58a6ff; font-size: 2.5rem; }
+.subtitle { font-size: 1.2rem; color: #8b949e; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px; }
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.github { background: #21262d; color: white; border: 1px solid #30363d; }
+.linkedin { background: #0a66c2; color: white; }
+.btn:hover { opacity: 0.8; transform: translateY(-3px); }
+.status-card { margin-top: 30px; padding-top: 20px; border-top: 1px solid #30363d; }
+button { background: #238636; border: none; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
